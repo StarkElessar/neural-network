@@ -1,0 +1,19 @@
+extends layouts/base
+
+//- Переменные для данной страницы
+block vars
+  - pageTitle = data.pageTitle
+  include vars
+
+//- Подключение шапки сайта
+block header
+  include partials/header
+
+//- Подключение контентной части
+block contentPage
+  main.page
+    div(data-observ)
+
+//- Подключение подвала
+block footer
+  include partials/footer
