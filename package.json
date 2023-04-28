@@ -77,7 +77,6 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "aos": "^2.3.4",
-    "swiper": "^8.4.5"
+    "aos": "^2.3.4"
   }
 }
