@@ -1,39 +1,44 @@
 $maxWidth: 1920; // максимальная ширина страницы
 $minWidth: 320; // минимальная ширина телефона
-$maxWidthContainer: 1200; // ширина контейнера с учетом padding слева и справа
-$containerWidth: 1160; // ширина контейнера из макета
+$maxWidthContainer: 1130; // ширина контейнера с учетом padding слева и справа
+$containerWidth: 1100; // ширина контейнера из макета
 
 $mainOffset: 15; // отступы безопасности для контейнера
-$mainFont: ''; // !указать здесь основное семейство шрифта
-$mainWeight: 400; // !указать здесь основное начертание шрифта
+$mainFont: 'Nunito'; // !указать здесь основное семейство шрифта
+$mainWeight: 300; // !указать здесь основное начертание шрифта
 
 $headerHeight: 100;
 $footerHeight: 100;
 
-$mainRadius: rem(10);
+$mainRadius: rem(20);
+$buttonRadius: rem(32);
 
 $whiteColor: #fff;
 $blackColor: #131313;
 $grayColor: #6f6f6f;
 $redColor: #ff4040;
 
-$firstAccentColor: $blackColor;
-$secondAccentColor: $redColor;
+$primaryColor: $blackColor;
+$secondaryColor: $redColor;
+
+$headerGradient: linear-gradient(
+  180deg,
+  #3b507d 0%,
+  rgba(59, 80, 125, 0.65) 100%,
+  rgba(59, 80, 125, 0) 100%
+);
 
 $fontFamily: $mainFont, sans-serif; // Семейство шрифта по умолчанию
 $fontColor: $blackColor; // Цвет шрифта по умолчанию
-$fontSize: rem(16); // Размер шрифта по умолчанию
+$fontSize: 15px; // Размер шрифта по умолчанию
 $fontWeight: $mainWeight; // Жирность шрифта по умолчанию
 
-$standartTrans: all 280ms ease-in-out 0ms;
+$defaultTransition: all 280ms ease-in-out 0ms;
 
-$btnBoxShadow:  0px 2px 3px rgba(#000, 10%), 
-                0px 8px 3px rgba(#000, 10%);
+$btnBoxShadow: 0px 2px 3px rgba(#000, 10%), 0px 8px 3px rgba(#000, 10%);
 
-$lightBoxShadow:  0 0 2px 0 rgba(#000, 10%), 
-                  0 0 4px 0 rgba(#000, 10%), 
-                  0 0 8px 0 rgba(#000, 10%);
+$lightBoxShadow: 0 0 2px 0 rgba(#000, 10%), 0 0 4px 0 rgba(#000, 10%),
+  0 0 8px 0 rgba(#000, 10%);
 
-$hoverBoxShadow:  0 0 5px 0 rgba(#000, 10%), 
-                  0 0 10px 0 rgba(#000, 10%), 
-                  0 0 15px 0 rgba(#000, 10%);
+$hoverBoxShadow: 0 0 5px 0 rgba(#000, 10%), 0 0 10px 0 rgba(#000, 10%),
+  0 0 15px 0 rgba(#000, 10%);
