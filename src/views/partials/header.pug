@@ -1,0 +1,20 @@
+header.header 
+  .header__container 
+    a.logo(href="#")
+      include ../svg/logo
+
+    nav.header__menu.menu
+
+      ul.menu__list
+        li.menu__item
+          a.menu__link(href='#description') Description
+        li.menu__item
+          a.menu__link(href='#cases') Кейсы
+        li.menu__item
+          a.menu__link(href='#process') Процесс
+        li.menu__item.menu__item_phone
+          a.menu__link(href='tel:+375291075375') +375 (29) 107-53-75
+
+    a.header__phone(href='tel:+375291075375') +375 (29) 107-53-75
+
+    include iconMenu
