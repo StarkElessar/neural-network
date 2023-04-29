@@ -1,3 +1,4 @@
+import gulp from 'gulp';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import rename from 'gulp-rename';
@@ -6,48 +7,39 @@ import webpcss from 'gulp-webpcss'; // Вывод WEBP изображений
 import autoPrefixer from 'gulp-autoprefixer'; // Добавление вендорных префиксов
 import groupCssMediaQueries from 'gulp-group-css-media-queries'; // Группировка медиа запросов
 
+import { plugins } from './../config/plugins.js';
+import { filePaths } from './../config/paths.js';
+import { isBuild, isDev } from '../../gulpfile.js';
+
 const sass = gulpSass(dartSass);
 
 const scss = () => {
+  const webpCssParams = {
+    webpClass: '.webp',
+    noWebpClass: '.no-webp',
+  };
+
+  const autoPrefixerOptions = {
+    grid: true,
+    overrideBrowserslist: ['last 3 versions'],
+    cascade: true,
+  };
+
   return (
-    app.gulp
-      .src(app.path.src.scss, { sourcemaps: app.isDev })
-      .pipe(
-        app.plugins.plumber(
-          app.plugins.notify.onError({
-            title: 'SCSS',
-            message: 'Error: <%= error.message %>',
-          })
-        )
-      )
+    gulp
+      .src(filePaths.src.scss, { sourcemaps: isDev })
+      .pipe(plugins.handleError('SCSS'))
       .pipe(sass({ outputStyle: 'expanded' }))
-      .pipe(app.plugins.replace(/@img\//g, '../images/'))
-      .pipe(app.plugins.if(app.isBuild, groupCssMediaQueries()))
-      .pipe(
-        app.plugins.if(
-          app.isBuild,
-          webpcss({
-            webpClass: '.webp',
-            noWebpClass: '.no-webp',
-          })
-        )
-      )
-      .pipe(
-        app.plugins.if(
-          app.isBuild,
-          autoPrefixer({
-            grid: true,
-            overrideBrowserslist: ['last 3 versions'],
-            cascade: true,
-          })
-        )
-      )
+      .pipe(plugins.replace(/@img\//g, '../images/'))
+      .pipe(plugins.if(isBuild, groupCssMediaQueries()))
+      .pipe(plugins.if(isBuild, webpcss(webpCssParams)))
+      .pipe(plugins.if(isBuild, autoPrefixer(autoPrefixerOptions)))
       // Раскомментировать если нужен не сжатый дубль файла стилей
-      // .pipe(app.gulp.dest(app.path.build.css))
-      .pipe(app.plugins.if(app.isBuild, cleanCss({ compatibility: 'ie8' })))
+      // .pipe(gulp.dest(filePaths.build.css))
+      .pipe(plugins.if(isBuild, cleanCss({ compatibility: 'ie8' })))
       .pipe(rename({ extname: '.min.css' }))
-      .pipe(app.gulp.dest(app.path.build.css))
-      .pipe(app.plugins.browserSync.stream())
+      .pipe(gulp.dest(filePaths.build.css))
+      .pipe(plugins.browserSync.stream())
   );
 };
 

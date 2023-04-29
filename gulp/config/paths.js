@@ -16,16 +16,17 @@ const filePaths = {
   src: {
     js: `${srcFolder}/js/app.js`,
     images: `${srcFolder}/images/**/*.{jpg,jpeg,png,gif,webp}`,
+    fonts: `${srcFolder}/fonts`,
     svg: `${srcFolder}/images/**/*.svg`,
     scss: `${srcFolder}/scss/style.scss`,
     static: `${srcFolder}/static/**/*.*`,
-    html: [`${srcFolder}/pug/index.pug`, `${srcFolder}/pug/pages/*.pug`],
+    html: [`${srcFolder}/views/index.pug`, `${srcFolder}/views/pages/*.pug`],
     svgIcons: `${srcFolder}/icons/*.svg`,
   },
   watch: {
     js: `${srcFolder}/js/**/*.js`,
     scss: `${srcFolder}/scss/**/*.scss`,
-    html: [`${srcFolder}/pug/index.pug`, `${srcFolder}/pug/pages/*.pug`],
+    html: `${srcFolder}/views/**/*.pug`,
     images: `${srcFolder}/**/*.{jpg,jpeg,png,svg,gif,webp,ico}`,
     static: `${srcFolder}/static/**/*.*`,
   },
@@ -33,7 +34,7 @@ const filePaths = {
   buildFolder: buildFolder,
   srcFolder: srcFolder,
   projectDirName,
-  ftp: ``, // Путь к нужной папке на удаленном сервере. gulp добавит имя папки проекта автоматически
+  ftp: ``, // Путь к нужной папке на удаленном сервере. Gulp добавит имя папки проекта автоматически
 };
 
 export { filePaths };

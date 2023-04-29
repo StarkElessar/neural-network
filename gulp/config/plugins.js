@@ -8,6 +8,14 @@ import ifPlugin from 'gulp-if'; // Условное ветление
 const concatPathAndFileName = (path, files) =>
   files.map((file) => `${path}/${file}`);
 
+const handleError = (taskName) =>
+  plumber({
+    errorHandler: notify.onError({
+      title: taskName,
+      message: 'Error: <%= error.message %>',
+    }),
+  });
+
 export const plugins = {
   if: ifPlugin,
   replace,
@@ -16,4 +24,5 @@ export const plugins = {
   browserSync,
   newer,
   concat: concatPathAndFileName,
+  handleError,
 };
