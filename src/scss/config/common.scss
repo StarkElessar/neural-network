@@ -1,1 +1,16 @@
-// Заголовки, общие БЄМ блоки и проче...
+// Заголовки, общие БЄМ блоки и прочее...
+.button {
+  padding: rem(24) rem(50);
+  color: #fff;
+  font-size: rem(20);
+  border: 3px solid #fff;
+  border-radius: $buttonRadius;
+  background-color: rgba(#fff, 5%);
+  transition: $defaultTransition;
+
+  &:hover {
+    background-color: rgba(#fff, 10%);
+    box-shadow: 0 0 rem(12) rgba(#afbcd7, 80%), 0 0 rem(24) rgba(#afbcd7, 80%),
+      0 0 rem(48) rgba(#afbcd7, 30%);
+  }
+}
