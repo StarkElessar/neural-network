@@ -1,0 +1,58 @@
+// .menu
+.menu {
+  @include mediaMx(767) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    padding: rem(100) 0 rem(12);
+    background-color: #111;
+    overflow: hidden auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: $defaultTransition;
+
+    .menu-open & {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  // .menu__list
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: rem(12);
+
+    @include mediaMx(767) {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: center;
+      gap: rem(24);
+    }
+  }
+
+  // .menu__item
+  &__item {
+    // .menu__item_phone
+    &_phone {
+      margin-left: rem(24);
+
+      @include mediaMx(768) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  // .menu__link
+  &__link {
+    color: #fff;
+    text-transform: uppercase;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
