@@ -1,0 +1,48 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 21px 0;
+  background: $headerGradient;
+  z-index: 1;
+
+  .menu-open & {
+    @include pseudocell(before) {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: rem(84);
+      background-color: #111;
+      z-index: 1;
+    }
+  }
+
+  &.sticky {
+    // ..стили для липкого хедера
+  }
+
+  // .header__container
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  // .header__menu
+  &__menu {
+    margin-left: auto;
+  }
+
+  // .header__phone
+  &__phone {
+    position: relative;
+    margin-left: auto;
+    margin-right: rem(12);
+    color: #fff;
+    z-index: 1;
+
+    @include mediaMn(767) {
+      display: none;
+    }
+  }
+}
