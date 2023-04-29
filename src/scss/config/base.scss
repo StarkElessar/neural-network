@@ -1,6 +1,6 @@
 body {
   &.lock {
-    overflow: hidden;
+    overflow: clip;
     touch-action: none;
   }
 }
@@ -54,7 +54,7 @@ body {
   padding: rem(60) rem(15); // Изменить по макету
   overflow-y: auto;
 
-  @include media(768) {
+  @include mediaMx(768) {
     &::-webkit-scrollbar {
       // Удалить из за ненадобности
       display: none;
