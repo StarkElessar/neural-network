@@ -1,0 +1,28 @@
+.hero {
+  height: 100vh;
+  background-image: url('../images/hero-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  // .hero__container
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+  }
+
+  // .hero__title
+  &__title {
+    margin-bottom: rem(80);
+    font-weight: 700;
+    font-size: rem(48);
+    line-height: prc(65, 48);
+    color: #fff;
+  }
+
+  // .hero__link
+  &__link {
+  }
+}
