@@ -88,8 +88,14 @@
 }
 
 // !media
-@mixin media($width) {
+@mixin mediaMx($width) {
   @media (max-width: #{$width + '.98' + px}) {
+    @content;
+  }
+}
+
+@mixin mediaMn($width) {
+  @media (min-width: #{$width + '.98' + px}) {
     @content;
   }
 }
@@ -189,7 +195,7 @@
 }
 
 // !after-before
-@mixin afterBefore($type, $pos: absolute) {
+@mixin pseudocell($type, $pos: absolute) {
   &::#{$type} {
     content: '';
     position: $pos;
