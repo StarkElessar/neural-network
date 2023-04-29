@@ -57,7 +57,7 @@ const ttfToWoff = () => {
 };
 
 const fontStyle = () => {
-  // Файл стилей подключения шрифтов
+  /** Файл стилей подключения шрифтов */
   const fontStylesFile = `${filePaths.srcFolder}/scss/config/fonts.scss`;
   // Проверяем существуют ли файлы шрифтов
   fs.readdir(filePaths.build.fonts, (err, fontFiles) => {

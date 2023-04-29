@@ -19,8 +19,6 @@ const handleError = (taskName) =>
 export const plugins = {
   if: ifPlugin,
   replace,
-  plumber,
-  notify,
   browserSync,
   newer,
   concat: concatPathAndFileName,
