@@ -6,8 +6,8 @@
     right: 0;
     width: 100%;
     height: 100%;
-    padding: rem(100) 0 rem(12);
-    background-color: #111;
+    padding: rem(180) 0 rem(12);
+    background-color: #fff;
     overflow: hidden auto;
     opacity: 0;
     visibility: hidden;
@@ -16,6 +16,11 @@
     .menu-open & {
       opacity: 1;
       visibility: visible;
+
+      .menu__link {
+        color: $darkBlueColor;
+        font-weight: 700;
+      }
     }
   }
   // .menu__list
