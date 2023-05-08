@@ -202,3 +202,29 @@
     @content;
   }
 }
+
+@mixin respond($resolution) {
+  @if $resolution == lg {
+    @include mediaMx(1900) {
+      @content;
+    }
+  }
+
+  @if $resolution == md {
+    @include mediaMx(1024) {
+      @content;
+    }
+  }
+
+  @if $resolution == sm {
+    @include mediaMx(768) {
+      @content;
+    }
+  }
+
+  @if $resolution == xs {
+    @include mediaMx(560) {
+      @content;
+    }
+  }
+}
