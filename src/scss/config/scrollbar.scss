@@ -1,28 +1,28 @@
 // Firefox
 * {
   scrollbar-width: rem(8);
-  scrollbar-color: $primaryColor #d6d6d6;
+  scrollbar-color: $darkBlueColor $darkBlueColor;
 
   // Chrome, Edge, and Safari
   &::-webkit-scrollbar {
     width: rem(8);
-    background-color: $whiteColor;
+    background-color: $darkBlueColor;
   }
 
   &::-webkit-scrollbar-track {
     box-shadow: inset 0 0 rem(6) rgba(#000, 20%);
-    border-radius: rem(4);
+    border-radius: 0;
     background: #eee;
   }
 
   &::-webkit-scrollbar-thumb {
-    border-radius: rem(4);
+    border-radius: 0;
     border: 0 none #fff;
-    background-color: lighten($primaryColor, 10%);
+    background-color: lighten($darkBlueColor, 10%);
     transition: all 280ms ease-in-out;
 
     &:hover {
-      background-color: $primaryColor;
+      background-color: $darkBlueColor;
     }
   }
 }
