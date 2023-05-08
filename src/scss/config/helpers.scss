@@ -1,0 +1,147 @@
+/**
+  Responsiveness: {
+    lg: 1900
+    md: 1024
+    sm: 768
+    xs: 560
+  }
+*/
+
+/** Margins and Paddings */
+@for $i from 1 through 30 {
+  $step: $i * 5;
+  $space: rem(5 * $i);
+
+  .pt-#{$step} {
+    padding-top: $space;
+  }
+  .pb-#{$step} {
+    padding-bottom: $space;
+  }
+  .pl-#{$step} {
+    padding-left: $space;
+  }
+  .pr-#{$step} {
+    padding-right: $space;
+  }
+  .py-#{$step} {
+    padding: $space 0;
+  }
+  .px-#{$step} {
+    padding: 0 $space;
+  }
+  .mt-#{$step} {
+    margin-top: $space;
+  }
+  .mb-#{$step} {
+    margin-bottom: $space;
+  }
+  .ml-#{$step} {
+    margin-left: $space;
+  }
+  .mr-#{$step} {
+    margin-right: $space;
+  }
+  .my-#{$step} {
+    margin: $space 0;
+  }
+  .mx-#{$step} {
+    margin: 0 $space;
+  }
+}
+
+.row-main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: rem(-15);
+
+  @include mediaMx(768) {
+    margin: rem(-6);
+  }
+}
+
+/** Columns */
+[class*='col-'] {
+  padding: rem(15);
+
+  @include mediaMx(768) {
+    padding: rem(6);
+  }
+}
+
+@for $i from 1 through 11 {
+  $amount: $i * 100%;
+  $width: calc(#{$amount} / 12);
+
+  .col-#{$i}-12 {
+    width: $width;
+  }
+}
+
+.col-full {
+  width: 100%;
+}
+
+.col-md-full {
+  @include respond(md) {
+    width: 100%;
+  }
+}
+
+.col-xs-full {
+  @include respond(xs) {
+    width: 100%;
+  }
+}
+
+/** Flexes */
+.d-flex {
+  display: flex;
+}
+
+.f-wrap {
+  flex-wrap: wrap;
+}
+
+.f-nowrap {
+  flex-wrap: nowrap;
+}
+
+.f-column {
+  flex-direction: column;
+}
+
+.f-row {
+  flex-direction: row;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.jc-space-around {
+  justify-content: space-around;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+/** Colors */
+.light-gray {
+  color: $lightGrayColor;
+}
+
+/** Font Sizes */
+@for $i from 1 through 12 {
+  $step: $i * 4;
+  $size: rem($i * 4);
+
+  .fz-#{$step} {
+    font-size: $size;
+  }
+}
