@@ -16,14 +16,16 @@ $buttonRadius: rem(32);
 $whiteColor: #fff;
 $blackColor: #131313;
 $grayColor: #6f6f6f;
+$lightGrayColor: #d9d9d9;
 $redColor: #ff4040;
+$darkBlueColor: #3b507d;
 
 $primaryColor: $blackColor;
 $secondaryColor: $redColor;
 
 $headerGradient: linear-gradient(
   180deg,
-  #3b507d 0%,
+  $darkBlueColor 0%,
   rgba(59, 80, 125, 0.65) 100%,
   rgba(59, 80, 125, 0) 100%
 );
