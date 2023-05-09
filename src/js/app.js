@@ -17,6 +17,8 @@ import {
 
 import Accordion from './modules/Accordion.js';
 import Tabs from './modules/Tabs.js';
+import ScrollToTopButton from './modules/ScrollToTopButton.js';
+import TextareaHeightAuto from './modules/TextareaHeightAuto.js';
 /* Раскомментировать для использования */
 // import { MousePRLX } from './libs/parallaxMouse';
 
@@ -75,3 +77,5 @@ new Accordion('.accordion', {
 });
 
 new Tabs('cases');
+new TextareaHeightAuto('.contact-form__textarea');
+new ScrollToTopButton('.to-top');
