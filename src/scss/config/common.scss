@@ -31,6 +31,12 @@
   }
 }
 
+.title-4 {
+  color: $lightGrayColor;
+  font-size: rem(18);
+  font-weight: 700;
+}
+
 .image-ibg {
   height: 100%;
   min-height: rem(320);
@@ -241,6 +247,7 @@
 
   // .tabs__panel
   &__panel {
+    animation: fade-up-big 0.4s forwards;
     display: none;
 
     h3 {
@@ -296,7 +303,7 @@
     font-size: 20px;
     border: 2px solid $lightGrayColor;
     border-radius: rem(20);
-    transition: all 0.3s ease-in-out;
+    transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     @include hidePlaceholder;
 
     @include respond(md) {
@@ -321,6 +328,8 @@
   // .contact-form__textarea
   &__textarea {
     resize: none;
+
+    @extend %hidescroll;
   }
 
   // .contact-form__submit
@@ -328,5 +337,33 @@
     @include mediaMn(768) {
       max-width: max-content;
     }
+  }
+}
+
+.to-top {
+  padding: 10px;
+  width: 60px;
+  height: 60px;
+  margin: 24px 0 0 auto;
+  background: transparent;
+  border-radius: 8px;
+  color: $lightGrayColor;
+  fill: currentColor;
+  transition: all 0.3s ease-in-out;
+
+  @include respond(xs) {
+    margin-left: 0;
+  }
+
+  &:hover {
+    background: rgba(#fff, 2%);
+  }
+
+  &:active {
+    background: rgba(#fff, 5%);
+  }
+
+  svg path {
+    fill: $lightGrayColor;
   }
 }
