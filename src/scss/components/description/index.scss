@@ -1,0 +1,73 @@
+.description {
+  position: relative;
+
+  @include pseudocell(before) {
+    bottom: 0;
+    left: 0;
+    width: 925px;
+    max-width: 925px;
+    height: 450px;
+    background-image: url('../images/description_decore.png');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: cover;
+  }
+
+  // .description__container
+  &__container {
+    position: relative;
+  }
+
+  // .description__text
+  &__text {
+    padding-right: rem(24);
+
+    @include respond(md) {
+      padding-right: 0;
+      padding-bottom: rem(24);
+    }
+
+    p {
+      color: $darkBlueColor;
+    }
+  }
+
+  // .description__items
+  &__items {
+    @include respond(xs) {
+      gap: rem(24);
+    }
+  }
+
+  // .description__item
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: rem(24);
+
+    p {
+      font-size: rem(13);
+      line-height: prc(18, 13);
+      color: $darkBlueColor;
+
+      @include respond(xs) {
+        padding: 0 rem(24);
+      }
+    }
+  }
+
+  // .description__icon
+  &__icon {
+    width: rem(60);
+    height: rem(60);
+
+    @include respond(xs) {
+      width: rem(40);
+      height: rem(40);
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+}

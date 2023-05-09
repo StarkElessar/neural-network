@@ -1,11 +1,25 @@
 .hero {
-  height: 100vh;
+  position: relative;
+  padding: rem(140) 0;
   background-image: url('../images/hero-bg.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
+  @include respond(xs) {
+    padding: rem(130) 0 rem(100);
+  }
+
+  @include pseudocell(before) {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(rgba(#000, 0) 0%, rgba(#000, 30%) 100%);
+  }
   // .hero__container
   &__container {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -20,6 +34,12 @@
     font-size: rem(48);
     line-height: prc(65, 48);
     color: #fff;
+
+    @include respond(xs) {
+      font-size: rem(40);
+      line-height: prc(52, 40);
+      margin-bottom: rem(60);
+    }
   }
 
   // .hero__link

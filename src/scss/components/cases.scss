@@ -1,0 +1,9 @@
+.cases {
+  // .cases__image
+  &__image {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0px 0px 40px #70a8d5);
+  }
+}

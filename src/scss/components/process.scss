@@ -1,0 +1,17 @@
+.process {
+  // .process__container
+  &__container {
+  }
+
+  // .process__accordion
+  &__accordion {
+    .accordion__header p {
+      font-size: rem(24);
+      line-height: prc(36, 24);
+
+      @include respond(xs) {
+        font-size: rem(20);
+      }
+    }
+  }
+}
