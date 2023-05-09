@@ -18,6 +18,100 @@ block contentPage
         h1.hero__title Разработка нейронных сетей
         a.hero__link.button(href='#') Оставить заявку
 
+    section.description.section-space#description
+      .description__container
+        h2.title.title_dark.center.mb-30 Description
+
+        .row-main
+          .col-7-12.col-md-full
+            .text-box.description__text
+              each text in data.descriptionArticles
+                p #{text}
+
+          .col-5-12.col-md-full
+            .image-ibg
+              img(src='images/description.jpg', alt='Neural Network')
+
+        .row-main.pt-60.description__items
+          each item in data.descriptionItems
+            .col-4-12.col-xs-full
+              .description__item
+                .description__icon
+                  img(src=`images/icons/description/${item.icon}.svg`, alt='Icon')
+                p #{item.text}
+
+    .gradient
+      section.process.section-space#process
+        .process__container
+          h2.title.center.mb-30 Описание процесса
+
+          .accordion.process__accordion
+            each item in data.processAccordion
+              .accordion__item
+                .accordion__header
+                  p.upper.light-gray #{item.header}
+                .accordion__content.text-box
+                  each article in item.articles
+                    p.text-md #{article}
+
+      section.cases.section-space#cases
+        .cases__container
+          h2.title.center.mb-20 Кейсы
+
+          img(src='images/cases/brain.png', alt='Brain').cases__image
+
+          .tabs(data-tabs='cases')
+            .tabs__nav
+              each trigger in data.tabsCases.triggers
+                button.tabs__trigger(type='button') #{trigger}
+
+            .tabs__content
+              each content in data.tabsCases.contents
+                .tabs__panel
+                  .row-main
+                    .col-6-12.col-md-full
+                      h3.light-gray #{content.title}
+
+                      .text-box
+                        each article in content.articles
+                          p.light-gray #{article}
+
+                      if content.list
+                        ul.tabs-list-box.mt-20
+                          each item in content.list
+                            li.light-gray #{item}
+
+                    .col-6-12.col-md-full.mt-md-20
+                      .image-ibg
+                        img(src=`images/cases/${content.imageName}`, alt=content.title)
+
+      section.section-space.cta#cta
+        .cta__container
+          h2.title.center.mb-30.mb-md-20 Напишите мне, обсудим детали
+
+          form.contact-form
+            .contact-form__row
+              .contact-form__field
+                label.contact-form__label(for='user_name') Ваше имя*
+                input.contact-form__input(id='user_name', name='name', type='text', placeholder='Имя')
+                .message-error Укажите, как Вас зовут
+
+              .contact-form__field
+                label.contact-form__label(for='user_email') Ваш e-mail
+                input.contact-form__input(id='user_email', name='email', type='mail', placeholder='E-mail')
+
+              .contact-form__field
+                label.contact-form__label(for='user_phone') Ваш телефон*
+                input.contact-form__input(id='user_phone', name='phone', type='tel', placeholder='Тел.')
+                .message-error Поле обязательно для заполнения
+
+            .contact-form__field
+              label.contact-form__label(for='user_message') Опишите кратко Вашу задачу
+              textarea.contact-form__textarea(id='user_message', name='message', placeholder='Сообщение')
+
+            .contact-form__field
+              button.button.contact-form__submit(type='submit') Отправить
+
 //- Подключение подвала
 block footer
   include partials/footer
