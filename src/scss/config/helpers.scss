@@ -7,46 +7,55 @@
   }
 */
 
-/** Margins and Paddings */
-@for $i from 1 through 30 {
-  $step: $i * 5;
-  $space: rem(5 * $i);
-
-  .pt-#{$step} {
+@mixin spacing($step, $space, $respond: '') {
+  .pt#{$respond}-#{$step} {
     padding-top: $space;
   }
-  .pb-#{$step} {
+  .pb#{$respond}-#{$step} {
     padding-bottom: $space;
   }
-  .pl-#{$step} {
+  .pl#{$respond}-#{$step} {
     padding-left: $space;
   }
-  .pr-#{$step} {
+  .pr#{$respond}-#{$step} {
     padding-right: $space;
   }
-  .py-#{$step} {
+  .py#{$respond}-#{$step} {
     padding: $space 0;
   }
-  .px-#{$step} {
+  .px#{$respond}-#{$step} {
     padding: 0 $space;
   }
-  .mt-#{$step} {
+  .mt#{$respond}-#{$step} {
     margin-top: $space;
   }
-  .mb-#{$step} {
+  .mb#{$respond}-#{$step} {
     margin-bottom: $space;
   }
-  .ml-#{$step} {
+  .ml#{$respond}-#{$step} {
     margin-left: $space;
   }
-  .mr-#{$step} {
+  .mr#{$respond}-#{$step} {
     margin-right: $space;
   }
-  .my-#{$step} {
+  .my#{$respond}-#{$step} {
     margin: $space 0;
   }
-  .mx-#{$step} {
+  .mx#{$respond}-#{$step} {
     margin: 0 $space;
+  }
+}
+
+$spaceValues: 20, 30, 60;
+
+/** Margins and Paddings */
+@each $value in $spaceValues {
+  $space: $value + px;
+
+  @include spacing($value, $space);
+
+  @include respond(md) {
+    @include spacing($value, $space, '-md');
   }
 }
 
