@@ -11,32 +11,39 @@ class Accordion {
     this.shouldOpenAll = options.shouldOpenAll || false;
     this.defaultOpen = options.defaultOpen || [];
 
-    this.accordion = document.querySelector(selector);
-    this.accordionItems = this.accordion.querySelectorAll('.accordion__item');
-
+    this.accordionSelector = selector;
+    this.accordions = document.querySelectorAll(this.accordionSelector);
     this.init();
   }
 
   init() {
-    this.accordion.addEventListener('click', ({ target }) => {
+    document.addEventListener('click', ({ target }) => {
       const header = target.closest('.accordion__header');
-
       if (!header) return;
 
       const item = header.parentNode;
+      const accordion = item.closest(this.accordionSelector);
+      if (!accordion) return;
+
+      const accordionItems = accordion.querySelectorAll('.accordion__item');
+
       this.toggle(item);
 
       if (item.classList.contains('open') && !this.shouldOpenAll) {
-        this.closeOthers(item);
+        this.closeOthers(item, accordionItems);
       }
     });
 
-    this.accordionItems.forEach((item, index) => {
-      if (this.defaultOpen.includes(index)) {
-        this.open(item);
-      } else {
-        this.close(item);
-      }
+    this.accordions.forEach((accordion) => {
+      const accordionItems = accordion.querySelectorAll('.accordion__item');
+
+      accordionItems.forEach((item, index) => {
+        if (this.defaultOpen.includes(index)) {
+          this.open(item);
+        } else {
+          this.close(item);
+        }
+      });
     });
   }
 
@@ -56,8 +63,8 @@ class Accordion {
     element.classList.remove('open');
   }
 
-  closeOthers(currentItem) {
-    for (const item of this.accordionItems) {
+  closeOthers(currentItem, items) {
+    for (const item of items) {
       if (item !== currentItem && item.classList.contains('open')) {
         this.close(item);
       }
