@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.min.css?_v=20230509203249">
+    <link rel="stylesheet" href="css/style.min.css?_v=20230509215929">
     <title>Разработка нейронных сетей</title>
   </head>
   <body>
@@ -37,7 +37,7 @@
         <div data-observ></div>
         <section class="hero">
           <div class="hero__container">
-            <h1 class="hero__title">Разработка нейронных сетей</h1><a class="button hero__link" href="#">Оставить заявку</a>
+            <h1 class="hero__title">Разработка нейронных сетей</h1><a class="button hero__link" href="#cta">Оставить заявку</a>
           </div>
         </section>
         <section class="section-space description" id="description">
@@ -208,22 +208,22 @@
               <form class="contact-form">
                 <div class="contact-form__row">
                   <div class="contact-form__field">
-                    <label class="contact-form__label" for="user_name">Ваше имя*</label>
+                    <label class="contact-form__label" for="user_name">Ваше имя:*</label>
                     <input class="contact-form__input" id="user_name" name="name" type="text" placeholder="Имя">
                     <div class="message-error">Укажите, как Вас зовут</div>
                   </div>
                   <div class="contact-form__field">
-                    <label class="contact-form__label" for="user_email">Ваш e-mail</label>
+                    <label class="contact-form__label" for="user_email">Ваш e-mail:</label>
                     <input class="contact-form__input" id="user_email" name="email" type="mail" placeholder="E-mail">
                   </div>
                   <div class="contact-form__field">
-                    <label class="contact-form__label" for="user_phone">Ваш телефон*</label>
+                    <label class="contact-form__label" for="user_phone">Ваш телефон:*</label>
                     <input class="contact-form__input" id="user_phone" name="phone" type="tel" placeholder="Тел.">
                     <div class="message-error">Поле обязательно для заполнения</div>
                   </div>
                 </div>
                 <div class="contact-form__field">
-                  <label class="contact-form__label" for="user_message">Опишите кратко Вашу задачу</label>
+                  <label class="contact-form__label" for="user_message">Опишите кратко Вашу задачу:</label>
                   <textarea class="contact-form__textarea" id="user_message" name="message" placeholder="Сообщение"></textarea>
                 </div>
                 <div class="contact-form__field">
@@ -235,9 +235,21 @@
         </div>
       </main>
       <footer class="footer"> 
-        <div class="footer__container"></div>
+        <div class="footer__container">
+          <div class="footer__col">
+            <h4 class="mb-20 title-4">Контакты для связи</h4><a class="footer__link" href="mailto:pochta@gmail.com">pochta@gmail.com</a><a class="footer__link" href="tel:+375291075375">+375 (29) 107-53-75</a><a class="footer__link" href="https://t.me/uladzimirbel">Telegram</a>
+          </div>
+          <div class="footer__col">
+            <div class="light-gray text-md">Доступен для звонков с 9:00 до 19:00.</div>
+            <button class="to-top" type="button" title="Подняться вверх">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
+                <path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM135.1 217.4c-4.5 4.2-7.1 10.1-7.1 16.3c0 12.3 10 22.3 22.3 22.3H208v96c0 17.7 14.3 32 32 32h32c17.7 0 32-14.3 32-32V256h57.7c12.3 0 22.3-10 22.3-22.3c0-6.2-2.6-12.1-7.1-16.3L269.8 117.5c-3.8-3.5-8.7-5.5-13.8-5.5s-10.1 2-13.8 5.5L135.1 217.4z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
       </footer>
     </div>
-    <script src="js/app.min.js?_v=20230509203249"></script>
+    <script src="js/app.min.js?_v=20230509215929"></script>
   </body>
 </html>
