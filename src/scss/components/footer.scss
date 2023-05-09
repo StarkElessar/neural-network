@@ -1,13 +1,36 @@
 .footer {
   padding: rem(20) 0;
-  background: $blackColor;
+  background: $darkBlueColor-2;
+
   // .footer__container
   &__container {
     display: flex;
-    align-items: center;
-    @include mediaMx(510) {
+    justify-content: space-between;
+    gap: 36px;
+
+    @include respond(xs) {
       flex-direction: column;
       align-items: flex-start;
+    }
+  }
+
+  // .footer__col
+  &__col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // .footer__link
+  &__link {
+    color: $lightGrayColor;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(12);
     }
   }
 }
