@@ -14,11 +14,10 @@ const toggleBodyLock = (isLock) => {
 
   setTimeout(
     () => {
-      if (lockPaddingElements) {
-        lockPaddingElements.forEach((element) => {
-          element.style.paddingRight = isLock ? `${lockPaddingValue}px` : '0px';
-        });
-      }
+      lockPaddingElements.forEach((element) => {
+        element.style.paddingRight = isLock ? `${lockPaddingValue}px` : '0px';
+        element.style.transition = isLock ? 'unset' : '';
+      });
 
       body.style.paddingRight = isLock ? `${lockPaddingValue}px` : '0px';
       body.classList.toggle('lock', isLock);
