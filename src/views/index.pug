@@ -16,7 +16,7 @@ block contentPage
     section.hero
       .hero__container
         h1.hero__title Разработка нейронных сетей
-        a.hero__link.button(href='#') Оставить заявку
+        a.hero__link.button(href='#cta') Оставить заявку
 
     section.description.section-space#description
       .description__container
@@ -92,21 +92,21 @@ block contentPage
           form.contact-form
             .contact-form__row
               .contact-form__field
-                label.contact-form__label(for='user_name') Ваше имя*
+                label.contact-form__label(for='user_name') Ваше имя:*
                 input.contact-form__input(id='user_name', name='name', type='text', placeholder='Имя')
                 .message-error Укажите, как Вас зовут
 
               .contact-form__field
-                label.contact-form__label(for='user_email') Ваш e-mail
+                label.contact-form__label(for='user_email') Ваш e-mail:
                 input.contact-form__input(id='user_email', name='email', type='mail', placeholder='E-mail')
 
               .contact-form__field
-                label.contact-form__label(for='user_phone') Ваш телефон*
+                label.contact-form__label(for='user_phone') Ваш телефон:*
                 input.contact-form__input(id='user_phone', name='phone', type='tel', placeholder='Тел.')
                 .message-error Поле обязательно для заполнения
 
             .contact-form__field
-              label.contact-form__label(for='user_message') Опишите кратко Вашу задачу
+              label.contact-form__label(for='user_message') Опишите кратко Вашу задачу:
               textarea.contact-form__textarea(id='user_message', name='message', placeholder='Сообщение')
 
             .contact-form__field
