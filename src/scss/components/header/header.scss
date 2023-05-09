@@ -5,6 +5,7 @@
   width: 100%;
   padding: 21px 0;
   background: $headerGradient;
+  transition: padding 0.3s ease-in-out;
   z-index: 1;
 
   .menu-open & {
@@ -12,14 +13,14 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: rem(84);
-      background-color: #111;
+      height: 100%;
+      background-color: $darkBlueColor;
       z-index: 1;
     }
   }
 
   &.sticky {
-    // ..стили для липкого хедера
+    padding: rem(8) 0;
   }
 
   // .header__container
