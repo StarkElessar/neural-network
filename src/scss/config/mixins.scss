@@ -203,6 +203,15 @@
   }
 }
 
+/**
+  Responsiveness: {
+    lg: 1900
+    md: 1024
+    sm: 768
+    xs: 560
+  }
+*/
+
 @mixin respond($resolution) {
   @if $resolution == lg {
     @include mediaMx(1900) {
