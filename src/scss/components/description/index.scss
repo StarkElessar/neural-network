@@ -28,7 +28,7 @@
     }
 
     p {
-      color: $darkBlueColor;
+      color: $mediumBlueColor;
     }
   }
 
@@ -48,7 +48,7 @@
     p {
       font-size: rem(13);
       line-height: prc(18, 13);
-      color: $darkBlueColor;
+      color: $mediumBlueColor;
 
       @include respond(xs) {
         padding: 0 rem(24);

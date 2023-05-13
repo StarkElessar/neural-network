@@ -10,8 +10,8 @@
 .gradient {
   background: radial-gradient(
     circle at 2.6% 2.66%,
-    #2c436b 0%,
-    #466f7c 99.99%,
+    $purpleBlueColor 0%,
+    $mintMagentaColor 99.99%,
     #afbcd7 100%,
     #70a8d5 100%
   );
@@ -175,11 +175,17 @@
     @include pseudocell(after, static) {
       transform: rotate(180deg);
       width: 30px;
-      height: 30px;
+      height: 28px;
       background-image: url('../images/icons/arrow.svg');
+      background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
       transition: all 0.6s ease-in-out;
+
+      @include respond(xs) {
+        width: 18px;
+        height: 16px;
+      }
     }
   }
 
@@ -199,12 +205,39 @@
 
   // .tabs__nav
   &__nav {
-    padding: 4px;
+    padding: 4px 4px 8px;
     display: flex;
     align-items: center;
     gap: rem(24);
     overflow-x: auto;
-    @extend %hidescroll;
+
+    &::-webkit-scrollbar {
+      height: 8px;
+      display: none;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(#fff, 0%);
+      border-radius: 4px;
+      box-shadow: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      background: rgba(#fff, 20%);
+
+      &:hover {
+        background: rgba(#fff, 10%);
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        &::-webkit-scrollbar {
+          display: block;
+        }
+      }
+    }
 
     @include respond(sm) {
       gap: rem(16);
@@ -232,7 +265,7 @@
     }
 
     &:focus {
-      box-shadow: 0 0 0 3px rgba($darkBlueColor, 100%);
+      box-shadow: 0 0 0 4px rgba($purpleBlueColor, 80%);
     }
 
     &.active {
@@ -288,6 +321,12 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+
+    &._error {
+      .message-error {
+        display: block;
+      }
+    }
   }
 
   // .contact-form__label
@@ -313,16 +352,23 @@
     }
 
     &:hover {
-      box-shadow: 0 0 0 2px #2c436b;
+      box-shadow: 0 0 0 2px $purpleBlueColor;
     }
 
     &:focus {
-      box-shadow: 0 0 0 4px rgba(#2c436b, 80%);
+      box-shadow: 0 0 0 4px rgba($purpleBlueColor, 80%);
     }
   }
 
   // .contact-form__input
   &__input {
+    &._error {
+      border-color: $redColor;
+
+      &:focus {
+        box-shadow: 0 0 0 4px rgba($redColor, 60%);
+      }
+    }
   }
 
   // .contact-form__textarea

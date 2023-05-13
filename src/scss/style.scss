@@ -32,6 +32,8 @@
 @import 'config/common';
 
 // Подключение стилей отдельных блоков и секций =======================================================================================================================
+@import 'components/modals';
+
 @import 'components/header';
 @import 'components/hero';
 @import 'components/description';
