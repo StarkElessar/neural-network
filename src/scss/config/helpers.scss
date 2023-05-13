@@ -7,56 +7,31 @@
   }
 */
 
-@mixin spacing($step, $space, $respond: '') {
-  .pt#{$respond}-#{$step} {
-    padding-top: $space;
+/** Spaces */
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+@include respond(md) {
+  .mt-md-20 {
+    margin-top: 20px;
   }
-  .pb#{$respond}-#{$step} {
-    padding-bottom: $space;
-  }
-  .pl#{$respond}-#{$step} {
-    padding-left: $space;
-  }
-  .pr#{$respond}-#{$step} {
-    padding-right: $space;
-  }
-  .py#{$respond}-#{$step} {
-    padding: $space 0;
-  }
-  .px#{$respond}-#{$step} {
-    padding: 0 $space;
-  }
-  .mt#{$respond}-#{$step} {
-    margin-top: $space;
-  }
-  .mb#{$respond}-#{$step} {
-    margin-bottom: $space;
-  }
-  .ml#{$respond}-#{$step} {
-    margin-left: $space;
-  }
-  .mr#{$respond}-#{$step} {
-    margin-right: $space;
-  }
-  .my#{$respond}-#{$step} {
-    margin: $space 0;
-  }
-  .mx#{$respond}-#{$step} {
-    margin: 0 $space;
+
+  .mb-md-20 {
+    margin-bottom: 20px;
   }
 }
 
-$spaceValues: 20, 30, 60;
+.mb-30 {
+  margin-bottom: 30px;
+}
 
-/** Margins and Paddings */
-@each $value in $spaceValues {
-  $space: $value + px;
-
-  @include spacing($value, $space);
-
-  @include respond(md) {
-    @include spacing($value, $space, '-md');
-  }
+.pt-60 {
+  padding-top: 60px;
 }
 
 .row-main {
@@ -145,12 +120,8 @@ $spaceValues: 20, 30, 60;
   color: $lightGrayColor;
 }
 
-/** Font Sizes */
-@for $i from 1 through 12 {
-  $step: $i * 4;
-  $size: rem($i * 4);
-
-  .fz-#{$step} {
-    font-size: $size;
-  }
+.medium-blue {
+  color: $mediumBlueColor;
 }
+
+/** Font Sizes */
