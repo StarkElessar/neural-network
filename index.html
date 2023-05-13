@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.min.css?_v=20230509215929">
+    <link rel="stylesheet" href="css/style.min.css?_v=20230513171451">
     <title>Разработка нейронных сетей</title>
   </head>
   <body>
@@ -24,9 +24,9 @@
             </svg></a>
           <nav class="header__menu menu">
             <ul class="menu__list">
-              <li class="menu__item"><a class="menu__link" href="#description">Description</a></li>
-              <li class="menu__item"><a class="menu__link" href="#cases">Кейсы</a></li>
-              <li class="menu__item"><a class="menu__link" href="#process">Процесс</a></li>
+              <li class="menu__item"><a class="menu__link _link" href="#description">Description</a></li>
+              <li class="menu__item"><a class="menu__link _link" href="#cases">Кейсы</a></li>
+              <li class="menu__item"><a class="menu__link _link" href="#process">Процесс</a></li>
               <li class="menu__item menu__item_phone"><a class="menu__link" href="tel:+375291075375">+375 (29) 107-53-75</a></li>
             </ul>
           </nav><a class="header__phone" href="tel:+375291075375">+375 (29) 107-53-75</a>
@@ -209,16 +209,17 @@
                 <div class="contact-form__row">
                   <div class="contact-form__field">
                     <label class="contact-form__label" for="user_name">Ваше имя:*</label>
-                    <input class="contact-form__input" id="user_name" name="name" type="text" placeholder="Имя">
+                    <input class="contact-form__input _req" id="user_name" name="name" type="text" placeholder="Имя">
                     <div class="message-error">Укажите, как Вас зовут</div>
                   </div>
                   <div class="contact-form__field">
                     <label class="contact-form__label" for="user_email">Ваш e-mail:</label>
-                    <input class="contact-form__input" id="user_email" name="email" type="mail" placeholder="E-mail">
+                    <input class="contact-form__input _email" id="user_email" name="email" type="mail" placeholder="E-mail">
+                    <div class="message-error">Не корректный e-mail</div>
                   </div>
                   <div class="contact-form__field">
                     <label class="contact-form__label" for="user_phone">Ваш телефон:*</label>
-                    <input class="contact-form__input" id="user_phone" name="phone" type="tel" placeholder="Тел.">
+                    <input class="contact-form__input _req" id="user_phone" name="phone" type="tel" placeholder="Тел.">
                     <div class="message-error">Поле обязательно для заполнения</div>
                   </div>
                 </div>
@@ -250,6 +251,6 @@
         </div>
       </footer>
     </div>
-    <script src="js/app.min.js?_v=20230509215929"></script>
+    <script src="js/app.min.js?_v=20230513171451"></script>
   </body>
 </html>
