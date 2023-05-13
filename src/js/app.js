@@ -78,6 +78,8 @@ new Accordion('.accordion', {
   defaultOpen: [0],
 });
 
+new FormSubmit('.contact-form', {});
+
 new Tabs('cases');
 new TextareaHeightAuto('.contact-form__textarea');
 new ScrollToTopButton('.to-top');
