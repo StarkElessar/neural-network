@@ -1,7 +1,9 @@
 import gulp from 'gulp';
 import { filePaths } from './gulp/config/paths.js';
 
-/** Импорт задач */
+/**
+ * Импорт задач
+ */
 import { copy } from './gulp/tasks/copy.js';
 import { copyRootFiles } from './gulp/tasks/copyRootFiles.js';
 import { reset } from './gulp/tasks/reset.js';
