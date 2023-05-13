@@ -89,28 +89,7 @@ block contentPage
         .cta__container
           h2.title.center.mb-30.mb-md-20 Напишите мне, обсудим детали
 
-          form.contact-form
-            .contact-form__row
-              .contact-form__field
-                label.contact-form__label(for='user_name') Ваше имя:*
-                input.contact-form__input(id='user_name', name='name', type='text', placeholder='Имя')
-                .message-error Укажите, как Вас зовут
-
-              .contact-form__field
-                label.contact-form__label(for='user_email') Ваш e-mail:
-                input.contact-form__input(id='user_email', name='email', type='mail', placeholder='E-mail')
-
-              .contact-form__field
-                label.contact-form__label(for='user_phone') Ваш телефон:*
-                input.contact-form__input(id='user_phone', name='phone', type='tel', placeholder='Тел.')
-                .message-error Поле обязательно для заполнения
-
-            .contact-form__field
-              label.contact-form__label(for='user_message') Опишите кратко Вашу задачу:
-              textarea.contact-form__textarea(id='user_message', name='message', placeholder='Сообщение')
-
-            .contact-form__field
-              button.button.contact-form__submit(type='submit') Отправить
+          include partials/contactForm
 
 //- Подключение подвала
 block footer
