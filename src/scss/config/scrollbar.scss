@@ -1,12 +1,12 @@
 // Firefox
 * {
   scrollbar-width: rem(8);
-  scrollbar-color: $darkBlueColor $darkBlueColor;
+  scrollbar-color: $mediumBlueColor $mediumBlueColor;
 
   // Chrome, Edge, and Safari
   &::-webkit-scrollbar {
     width: rem(8);
-    background-color: $darkBlueColor;
+    background-color: $mediumBlueColor;
   }
 
   &::-webkit-scrollbar-track {
@@ -18,11 +18,10 @@
   &::-webkit-scrollbar-thumb {
     border-radius: 0;
     border: 0 none #fff;
-    background-color: lighten($darkBlueColor, 10%);
-    transition: all 280ms ease-in-out;
+    background-color: lighten($mediumBlueColor, 10%);
 
     &:hover {
-      background-color: $darkBlueColor;
+      background-color: $mediumBlueColor;
     }
   }
 }
