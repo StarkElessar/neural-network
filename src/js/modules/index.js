@@ -4,6 +4,7 @@ import {
   firstScreen,
   header,
   burgerButton,
+  menu,
 } from './../helpers/elementsNodeList';
 
 // logger (Full Logging System) ==========================================================================
@@ -123,6 +124,10 @@ const menuInit = () => {
       if (target.closest('.icon-menu')) {
         html.classList.toggle('menu-open');
         toggleBodyLock(html.classList.contains('menu-open'));
+      }
+
+      if (target.closest('._link')) {
+        menuClose();
       }
     });
   }
