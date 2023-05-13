@@ -18,15 +18,18 @@ $blackColor: #131313;
 $grayColor: #6f6f6f;
 $lightGrayColor: #d9d9d9;
 $redColor: #ff4040;
-$darkBlueColor: #3b507d;
-$darkBlueColor-2: #18294d;
+$greenColor: #27b24a;
+$mediumBlueColor: #3b507d;
+$darkBlueColor: #18294d;
+$purpleBlueColor: #2c436b;
+$mintMagentaColor: #466f7c;
 
 $primaryColor: $blackColor;
 $secondaryColor: $redColor;
 
 $headerGradient: linear-gradient(
   180deg,
-  $darkBlueColor 0%,
+  $mediumBlueColor 0%,
   rgba(59, 80, 125, 0.65) 100%,
   rgba(59, 80, 125, 0) 100%
 );
