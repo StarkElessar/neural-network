@@ -19,6 +19,8 @@ import Accordion from './modules/Accordion.js';
 import Tabs from './modules/Tabs.js';
 import ScrollToTopButton from './modules/ScrollToTopButton.js';
 import TextareaHeightAuto from './modules/TextareaHeightAuto.js';
+import FormSubmit from './modules/FormSubmit.js';
+
 /* Раскомментировать для использования */
 // import { MousePRLX } from './libs/parallaxMouse';
 
