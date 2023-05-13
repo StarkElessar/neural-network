@@ -36,7 +36,7 @@ const scss = () => {
       .pipe(plugins.if(isBuild, autoPrefixes(autoPrefixesOptions)))
       // Раскомментировать если нужен не сжатый дубль файла стилей
       // .pipe(gulp.dest(filePaths.build.css))
-      .pipe(plugins.if(isBuild, cleanCss({ compatibility: 'ie8' })))
+      .pipe(plugins.if(isBuild, cleanCss()))
       .pipe(rename({ extname: '.min.css' }))
       .pipe(gulp.dest(filePaths.build.css))
       .pipe(plugins.browserSync.stream())
