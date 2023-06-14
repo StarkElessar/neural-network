@@ -3,13 +3,11 @@ import { body } from '../helpers/elementsNodeList';
 import toggleBodyLock from '../helpers/toggleBodyLock.js';
 
 class FormSubmit {
-  errorCount = 0;
-
   constructor(selector, options = {}) {
     const defaultOptions = {
       timeToDelete: 3000,
       emailRegex: /^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,8})+$/,
-      actionEndpoint: './../files/php/sendTelegram.php',
+      actionEndpoint: '/send_message/',
       errorMessages: {
         missingFormFields: 'Ошибка: отсутствует форма или обязательные поля',
         emptyRequiredFields: 'Заполните обязательные поля',
@@ -50,40 +48,39 @@ class FormSubmit {
     event.preventDefault();
 
     try {
-      this.errorCount = this.validateForm(this.form);
       const formData = new FormData(this.form);
 
-      if (!this.errorCount) {
+      if (!this.validateForm) {
         this.form.classList.add('_sending');
-        const response = await this.sendPostRequest({
-          url: this.options.actionEndpoint,
-          formData,
+
+        const response = await fetch(this.options.actionEndpoint, {
+          method: 'POST',
+          body: formData,
         });
 
-        if (response.status === 200) {
-          this.form.classList.remove('_sending');
-          this.showModal(null, false);
+        const { text_response } = await response.json();
+
+        if (response.ok) {
+          this.showModal(text_response, false);
         } else {
-          console.log('Что то пошло не так');
-          this.form.classList.remove('_sending');
           this.showModal(this.options.errorMessages.genericError);
         }
       } else {
-        console.log('Поля не заполнены, есть ошибки', this.errorCount);
         this.showModal(this.options.errorMessages.emptyRequiredFields);
       }
     } catch (error) {
-      console.log('Запрос не ушел, ошибка: ', error);
       this.form.classList.remove('_sending');
       this.showModal(this.options.errorMessages.genericError);
     } finally {
-      if (!this.errorCount) {
+      if (!this.validateForm) {
         this.form.reset();
       }
+
+      this.form.classList.remove('_sending');
     }
   }
 
-  validateForm(form) {
+  get validateForm() {
     let counterError = 0;
 
     this.inputsToValidate.forEach((input) => {
@@ -120,15 +117,6 @@ class FormSubmit {
 
   validateEmail(input) {
     return this.options.emailRegex.test(input.value);
-  }
-
-  async sendPostRequest({ url, data }) {
-    const response = await fetch(url, {
-      method: 'POST',
-      body: data,
-    });
-
-    return await response.json();
   }
 
   showModal(message, isError = true) {
