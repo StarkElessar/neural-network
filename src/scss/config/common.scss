@@ -105,6 +105,16 @@
   }
 }
 
+.text-lg {
+  font-size: rem(21);
+  line-height: 1.3;
+  color: #fff;
+
+  @include respond(xs) {
+    font-size: rem(18);
+  }
+}
+
 .tabs-list-box {
   display: flex;
   flex-direction: column;
