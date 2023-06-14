@@ -15,8 +15,13 @@
     height: 100%;
     top: 0;
     left: 0;
-    background: linear-gradient(rgba(#000, 0) 0%, rgba(#000, 30%) 100%);
+    background: linear-gradient(rgba(#000, 10%) 0%, rgba(#000, 80%) 100%);
   }
+
+  .text-box {
+    margin-bottom: rem(30);
+  }
+
   // .hero__container
   &__container {
     position: relative;
