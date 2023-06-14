@@ -4,7 +4,6 @@ import {
   firstScreen,
   header,
   burgerButton,
-  menu,
 } from './../helpers/elementsNodeList';
 
 // Проверка браузера на поддержку .webp изображений ======================================================

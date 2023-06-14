@@ -114,3 +114,7 @@ class MaskedInput {
 }
 
 new MaskedInput();
+
+window.addEventListener('load', () => {
+  document.documentElement.classList.add('loaded');
+});
