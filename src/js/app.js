@@ -6,14 +6,7 @@
 
  Если мы хотим добавить модуль следует его раскомментировать
  */
-import {
-  isWebp,
-  headerFixed,
-  togglePopupWindows,
-  addTouchClass,
-  addLoadedClass,
-  menuInit,
-} from './modules';
+import { isWebp, headerFixed, menuInit } from './modules';
 
 import Accordion from './modules/Accordion.js';
 import Tabs from './modules/Tabs.js';
@@ -29,9 +22,6 @@ import FormSubmit from './modules/FormSubmit.js';
 
 /* Раскомментировать для использования */
 // import Swiper, { Navigation, Pagination } from 'swiper';
-
-// Включить/выключить FLS (Full Logging System) (в работе)
-window['FLS'] = location.hostname === 'localhost';
 
 /* Проверка поддержки webp, добавление класса webp или no-webp для HTML
  ! (i) необходимо для корректного отображения webp из css
@@ -72,7 +62,6 @@ headerFixed();
 /* Раскомментировать для использования */
 // togglePopupWindows();
 // =======================================================================================================
-
 new Accordion('.accordion', {
   shouldOpenAll: false,
   defaultOpen: [0],
@@ -83,3 +72,45 @@ new FormSubmit('.contact-form', {});
 new Tabs('cases');
 new TextareaHeightAuto('.contact-form__textarea');
 new ScrollToTopButton('.to-top');
+
+class MaskedInput {
+  nonDigitRegex = /\D/g;
+
+  constructor() {
+    this.inputs = document.querySelectorAll('input[type="tel"]');
+
+    this.init();
+  }
+
+  init() {
+    this.inputs.forEach((input) => {
+      input.addEventListener('input', this.handleInput.bind(this), false);
+    });
+  }
+
+  handleInput({ target, data }) {
+    let formattedInputValue = '';
+    const inputNumbersValue = this.getInputNumbersValue(target);
+    const { selectionStart } = target;
+
+    if (!inputNumbersValue) {
+      return (target.value = '');
+    }
+
+    if (target.value.length === selectionStart) {
+      if (data && this.nonDigitRegex.test(data)) {
+        target.value = inputNumbersValue;
+      }
+
+      return;
+    }
+
+    console.log(event, inputNumbersValue);
+  }
+
+  getInputNumbersValue(input) {
+    return input.value.replace(this.nonDigitRegex, '');
+  }
+}
+
+new MaskedInput();

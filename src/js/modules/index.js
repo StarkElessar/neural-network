@@ -7,11 +7,6 @@ import {
   menu,
 } from './../helpers/elementsNodeList';
 
-// logger (Full Logging System) ==========================================================================
-function FLS(message) {
-  setTimeout(() => (window.FLS ? console.log(message) : null), 0);
-}
-
 // Проверка браузера на поддержку .webp изображений ======================================================
 function isWebp() {
   // Проверка поддержки webp
@@ -27,7 +22,7 @@ function isWebp() {
     const className = support ? 'webp' : 'no-webp';
     html.classList.add(className);
 
-    FLS(support ? 'webp поддерживается' : 'webp не поддерживается');
+    console.log(support ? 'webp поддерживается' : 'webp не поддерживается');
   });
 }
 
@@ -144,7 +139,6 @@ const menuClose = () => {
 };
 
 export {
-  FLS,
   isWebp,
   isMobile,
   addTouchClass,
