@@ -76,6 +76,7 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "aos": "^2.3.4"
+    "aos": "^2.3.4",
+    "inputmask": "^5.0.8"
   }
 }

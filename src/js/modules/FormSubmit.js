@@ -6,6 +6,7 @@ class FormSubmit {
   constructor(selector, options = {}) {
     const defaultOptions = {
       timeToDelete: 3000,
+      token: null,
       emailRegex: /^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,8})+$/,
       actionEndpoint: '/send_message/',
       errorMessages: {
@@ -55,6 +56,7 @@ class FormSubmit {
 
         const response = await fetch(this.options.actionEndpoint, {
           method: 'POST',
+          headers: { 'X-CSRFToken': this.options.token },
           body: formData,
         });
 
