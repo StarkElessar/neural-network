@@ -6,6 +6,7 @@
 
  Если мы хотим добавить модуль следует его раскомментировать
  */
+import Inputmask from 'inputmask/lib/inputmask.js';
 import { isWebp, headerFixed, menuInit } from './modules';
 
 import Accordion from './modules/Accordion.js';
@@ -67,53 +68,17 @@ new Accordion('.accordion', {
   defaultOpen: [0],
 });
 
-new FormSubmit('.contact-form', {});
+new FormSubmit('.contact-form', {
+  token:
+    document.querySelector('input[name="csrfmiddlewaretoken"]')?.value || '',
+});
 
 new Tabs('cases');
 new TextareaHeightAuto('.contact-form__textarea');
 new ScrollToTopButton('.to-top');
-
-class MaskedInput {
-  nonDigitRegex = /\D/g;
-
-  constructor() {
-    this.inputs = document.querySelectorAll('input[type="tel"]');
-
-    this.init();
-  }
-
-  init() {
-    this.inputs.forEach((input) => {
-      input.addEventListener('input', this.handleInput.bind(this), false);
-    });
-  }
-
-  handleInput({ target, data }) {
-    let formattedInputValue = '';
-    const inputNumbersValue = this.getInputNumbersValue(target);
-    const { selectionStart } = target;
-
-    if (!inputNumbersValue) {
-      return (target.value = '');
-    }
-
-    if (target.value.length === selectionStart) {
-      if (data && this.nonDigitRegex.test(data)) {
-        target.value = inputNumbersValue;
-      }
-
-      return;
-    }
-
-    console.log(event, inputNumbersValue);
-  }
-
-  getInputNumbersValue(input) {
-    return input.value.replace(this.nonDigitRegex, '');
-  }
-}
-
-new MaskedInput();
+new Inputmask('+375 (99) 999-99-99').mask(
+  document.querySelectorAll('input[type="tel"]')
+);
 
 window.addEventListener('load', () => {
   document.documentElement.classList.add('loaded');
